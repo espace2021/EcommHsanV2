@@ -1,10 +1,25 @@
 import React from 'react'
-import axios from 'axios'
+import { getServerSession } from "next-auth";
+import { authOptions } from "pages/api/auth/[...nextauth]";
+
 import Listproducts from '@/components/admin/Listproducts';
+
 const getProducts=async()=>{
-  const {data}=await axios.get(`${process.env.API_URL}/api/articles`)
-  return data;
+
+  const session = await getServerSession(authOptions);
+
+  const res= await fetch(`${process.env.API_URL}/api/articles`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${session?.user.token}`,
+    },
+  });
+const products = await res.json();
+console.log(products)
+return products
 }
+
 const AdminProducts  = async() => {
     const produits = await getProducts();
   return (
