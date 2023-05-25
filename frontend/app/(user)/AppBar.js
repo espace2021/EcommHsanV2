@@ -6,9 +6,13 @@ import FaceIcon from '@mui/icons-material/Face';
 import ExitToAppRoundedIcon from '@mui/icons-material/ExitToAppRounded';
 import Button from '@mui/material/Button';
 
+import { useRouter } from 'next/navigation';
+
 const AppBar = () => {
   
   const {data} =useSession();
+
+  const router = useRouter();
 
   return (
     <ul className="bg-gradient-to-b from-white to-cyan-50 shadow px-1 py-2 flex text-cyan-500 gap-3  ">
@@ -21,9 +25,9 @@ const AppBar = () => {
       {data ? ( <li>
               <span style={{ marginRight: "15px",color :"orange" }}>USER : {data?.user?.user?.email}</span>
               {" "}
-             <Button color="inherit" onClick={() => {signOut();}}><ExitToAppRoundedIcon style={{ color: 'gray' }}/> Logout </Button>
+             <Button color="inherit" onClick={() => {signOut()}}><ExitToAppRoundedIcon style={{ color: 'gray' }}/> Logout </Button>
             </li>
-            ): <Button color="inherit" onClick={() => router.push('/login')}><FaceIcon style={{ color: 'green' }}/> Login </Button>
+            ): <Button color="inherit" onClick={() => router.push('/auth/login')}><FaceIcon style={{ color: 'green' }}/> Login </Button>
             }
     </ul>
   );

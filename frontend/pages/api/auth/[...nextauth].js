@@ -34,7 +34,7 @@ async function refreshTokenRequest(token) {
 }
 
 export const authOptions = {
-  secret: process.env.AUTH_SECRET,
+ secret: process.env.AUTH_SECRET,
   providers: [
     CredentialsProvider({
        name: "Credentials",
