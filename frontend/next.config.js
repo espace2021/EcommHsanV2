@@ -6,7 +6,7 @@ const nextConfig = {
         },
         env: {
             API_URL: "http://localhost:3001",
-            AUTH_SECRET:"bonjour"
+            NEXTAUTH_SECRET :"bonjour"
             
         } 
 }

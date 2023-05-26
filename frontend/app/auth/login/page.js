@@ -23,7 +23,7 @@ const Login = () => {
       })
       console.log(res);
     
-      router.push('/admin/products/')
+      router.push('/admin')
     } catch (error) {
       console.log(error);
     }

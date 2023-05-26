@@ -1,6 +1,5 @@
 'use client';
 import "./globals.css";
-import AppBar from "./(user)/AppBar"
 import { SessionProvider } from 'next-auth/react'
 
 export const metadata = {
@@ -13,10 +12,9 @@ export default function RootLayout({ children,session  }) {
     <html lang="en">
       <body >
       <SessionProvider session={session}>
-      <AppBar/>
         {children}
-        </SessionProvider>
-        </body>
+      </SessionProvider>
+      </body>
     </html>
   )
 }
