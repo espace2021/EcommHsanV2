@@ -66,8 +66,8 @@ export const authOptions = {
   ],
   callbacks: {
     async jwt({ token, user, account }) {
-   
-    if (account && user) {
+  
+    if (account && user) {  console.log("account",account)
       return { ...token, ...user };
     }
  
@@ -79,9 +79,10 @@ export const authOptions = {
 
     },
     async session({ session, token, user }) {
+      
       session.user = token ;
       session.error = token.error
-
+      console.log("session",session)
       return session;
     },
   },

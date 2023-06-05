@@ -3,7 +3,7 @@ const router = express.Router();
 const Article=require("../models/article")
 const {verifyToken} =require("../middleware/veriftoken")
 // afficher la liste des articles.
-router.get('/',verifyToken ,async (req, res, )=> {
+router.get('/',async (req, res, )=> {
     try {
         const articles = await Article.find().populate("scategorieID").exec();
 

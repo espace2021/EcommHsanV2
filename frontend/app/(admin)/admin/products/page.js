@@ -1,6 +1,6 @@
 import React from 'react'
 import { getServerSession } from "next-auth";
-import { authOptions } from "pages/api/auth/[...nextauth]";
+import { authOptions } from "@/app/api/auth/[...nextauth]";
 
 import Listproducts from '@/components/admin/Listproducts';
 
@@ -16,7 +16,7 @@ const getProducts=async()=>{
     },
   });
 const products = await res.json();
-console.log(products)
+
 return products
 }
 
