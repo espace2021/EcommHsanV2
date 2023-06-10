@@ -8,7 +8,13 @@ const nextConfig = {
             API_URL: "http://localhost:3001",
             NEXTAUTH_SECRET :"bonjour"
             
-        } 
+        },
+        plugins: {
+            'postcss-import': {},
+            'tailwindcss/nesting': {},
+            tailwindcss: {},
+            autoprefixer: {},
+          } 
 }
 
 module.exports = nextConfig
