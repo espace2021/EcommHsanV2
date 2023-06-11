@@ -6,6 +6,7 @@ const SearchItem = ({word,setWord}) => {
   return (
     <div>
       <input 
+      id="word"
       type="search" 
       placeholder="Search" 
       value={word} 
