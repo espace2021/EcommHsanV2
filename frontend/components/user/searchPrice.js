@@ -13,7 +13,7 @@ const SearchPrice = ({price,setPrice,maxPrice}) => {
   return (
     <div>
     {'   '} 
-<p>
+<div>
  
  <input type="range" id="price" name="price" list="values" 
   onChange={(event) => {setPrice(event.target.value)}}
@@ -22,10 +22,10 @@ const SearchPrice = ({price,setPrice,maxPrice}) => {
   />
     <label htmlFor="price">Prix MAX { price }</label>
   
-</p>
+</div>
 
 <datalist id="values">
- {optionsData}
+ {optionsData()}
 </datalist>
     </div>  
   )
